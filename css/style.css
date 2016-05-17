@@ -1,0 +1,437 @@
+html{
+	background-color: #e2e8eb;
+	
+}
+body{
+	background-color: #e2e8eb;
+}
+.left-bar{
+	position: absolute;
+	left: 1050px;
+	top: 100px;
+	position: fixed;
+	
+	
+}
+.top-background{
+	background:
+	    /* top, transparent black, faked with gradient */ 
+	    linear-gradient(
+	      rgba(0, 0, 0, 0.7), 
+	      rgba(0, 0, 0, 0.7)
+	    ),
+	    /* bottom, image */
+	    url(../img/branhamhighpicture.png);
+	    height: 600px;
+	    width: 100%;
+	 position: absolute;
+	 top: -100px;
+
+}
+.info-connect{
+	color: white;
+	text-align: center;
+	position: relative;
+	top: 35%;
+	font-size: 20px;
+
+}
+.news-index{
+	position: absolute;
+	top: 650px;
+	left: 10%;
+	width: 500px;
+	
+}
+.news-content-index{
+	background-color: white;
+	padding: 15px;
+	margin-bottom: 30px;
+	border: 1px solid #AAAAAA;
+	border-radius: 7px;
+	
+	
+}
+.news-img-index{
+	max-height: 400px;
+	margin-left: 30px;
+	margin: 20px;
+}
+.connect-options{
+	color: white;
+	position: relative;
+	
+	top: 37%;
+	font-size: 15px;
+	
+}
+.heading-trends-index{
+	font-weight: bold;
+	padding-left: 20px;
+}
+.trends-index{
+	background-color: white;
+	position: relative;
+	width: 300px;
+	float: right;
+	top: 650px;
+	padding: 20px;
+	border: solid 1px #AAAAAA;
+	border-radius: 10px;
+}
+.links-trends-index{
+	font-size: 18px;
+	padding-left: 40px;
+}
+.bg-heading{
+	color: white;
+	font-weight: bold;
+	position: relative;
+	font-size: 60px;
+	text-align: center;
+	position: relative;
+	top: 20%;
+	
+}
+.bg-side{
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	position: relative;
+	top: 30%;
+}
+.login-submit {
+  background: #095080;
+  background-image: -webkit-linear-gradient(top, #095080, #2790d1);
+  background-image: -moz-linear-gradient(top, #095080, #2790d1);
+  background-image: -ms-linear-gradient(top, #095080, #2790d1);
+  background-image: -o-linear-gradient(top, #095080, #2790d1);
+  background-image: linear-gradient(to bottom, #095080, #2790d1);
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 5px 5px 5px 5px;
+  text-decoration: none;
+}
+
+.login-submit:hover {
+  background: #00a2ff;
+  background-image: -webkit-linear-gradient(top, #00a2ff, #085080);
+  background-image: -moz-linear-gradient(top, #00a2ff, #085080);
+  background-image: -ms-linear-gradient(top, #00a2ff, #085080);
+  background-image: -o-linear-gradient(top, #00a2ff, #085080);
+  background-image: linear-gradient(to bottom, #00a2ff, #085080);
+  text-decoration: none;
+}
+.signup-calling-btn {
+  background: #095080;
+  background-image: -webkit-linear-gradient(top, #095080, #2790d1);
+  background-image: -moz-linear-gradient(top, #095080, #2790d1);
+  background-image: -ms-linear-gradient(top, #095080, #2790d1);
+  background-image: -o-linear-gradient(top, #095080, #2790d1);
+  background-image: linear-gradient(to bottom, #095080, #2790d1);
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 5px 5px 5px 5px;
+  text-decoration: none;
+  border: 2px;
+}
+
+.signup-calling-btn:hover {
+  background: #00a2ff;
+  background-image: -webkit-linear-gradient(top, #00a2ff, #085080);
+  background-image: -moz-linear-gradient(top, #00a2ff, #085080);
+  background-image: -ms-linear-gradient(top, #00a2ff, #085080);
+  background-image: -o-linear-gradient(top, #00a2ff, #085080);
+  background-image: linear-gradient(to bottom, #00a2ff, #085080);
+  text-decoration: none;
+}
+.login-section {
+    height: 400px;
+}
+
+#searchForm {
+    border-bottom: 2px dashed grey;
+}
+
+.search {
+    background-color: #FAFAFA;
+}
+
+#searchSubmit {
+    margin: 10px;
+    font-size: 15px;
+    position: relative;
+    left: 20%;
+    top: 5px;
+}
+
+.side-links {
+    margin-left: 5px;
+    
+    position: relative;
+    top: 20px;
+}
+
+.top-heading{
+	height: 80px;
+	width: cover;
+	background-color: #264867;
+	
+}
+
+.logo{
+	position: relative;
+	top: 15px;
+	left: 45px;
+}
+
+.heading{
+	position: relative;
+	top:15px;
+	width: 200px;
+	font-size: 35px;
+	color: white;
+}
+
+.login-section{
+	border: 2px dashed grey;
+	padding:10px;
+	top: -65px;
+	position: relative;
+	width: 200px;
+}
+.btn-login{
+	color: white;
+	font-size: 15px;
+	position: relative;
+	z-index: 100;
+        
+}
+.btn-login:hover{
+	color: grey;
+}
+.login-btn-index{
+	position: absolute;
+	left: 45%;
+	top: 70%;
+	width: 150px;
+}
+
+.login-submit{
+	position: relative;
+	top: 10px;
+	left: 30px;
+	width: 100px;
+}
+
+.loginbox{
+	background-color: #262626;
+	color: white;
+	height: 250px;
+	position: relative;
+	top: -50px;
+}
+.login-head{
+	font-size: 40px;
+	text-align: center;
+}
+.toplogin{
+
+	display:inline;
+	top: -70px;
+	height: 80px;
+	left: 90%;
+	position: relative;
+
+}
+.input-login{
+	height: 50px;
+	width: 400px;
+	padding: 5px;
+	padding-left: 10px;
+	font-size: 16px;
+	color: black;
+}
+.username-lo{
+	position: relative;
+	left: 20%;
+	top: 10px;
+}
+.password-lo{
+	position: relative;
+	left: 21%;
+	top: 10px;
+}
+.top-case{
+	display:inline;
+	float: right;
+	
+	height: 80px;
+	
+	position: relative;
+	right: 100px;
+	top: -50px;
+	padding-top: 25px;
+	font-size: 25px;
+	margin-right: 15px;
+}
+.top-links{
+	text-decoration: none !important;
+	color: #E2E4E6;
+}
+.top-links:hover{
+	color: lightblue;
+}
+.side-body{
+	background-color: #3B70A0;
+	position: relative;
+	
+	left: 0px;
+	color: white;
+	border-top: 3px outset grey;
+	border-left: 3px outset grey;
+	border-bottom: 3px outset grey;
+	border-right: 3px outset grey;
+}
+.inner-side-body{
+	background-color: white;
+	height: 900px;
+	width: cover;
+	color: black;
+	position: relative;
+	top: 0px;
+	padding: 15px;
+}
+.page-info{
+	padding: 10px;
+	font-size: 25px;
+}
+.signup-calling-btn{
+	position: relative;
+	height:40px;
+	width: 120px;
+	left: 40%;
+	top: 30px;
+}
+.bottom{
+	text-align: center;
+}
+.input-signup{
+	width: 350px;
+	height: 30px;
+	margin: 5px;
+	position: relative;
+	border-radius: 5px;
+	font-family: verdana;
+	left: 30px;
+	padding: 3px;
+}
+.done-btn{
+	position: relative;
+	left: 100px;
+	margin-top: 15px;
+	height: 50px;
+	width: 150px;
+	border-radius: 10px;
+	font-size: 30px;
+	background-color: lightgreen;
+}
+.top-case{
+	position: relative;
+	top: -100px
+}
+.top-about-nf{
+	position: relative;
+	left: -350px;
+}
+.top-trending{
+	position: relative;
+	left: -350px;
+}
+.top-faq{
+	position: relative;
+	left: -350px;
+}
+.top-fb{
+	position: relative;
+	left: -350px;
+}
+.top-bugr{
+	position: relative;
+	left: -350px;
+}
+.top-about-nf{
+	position: relative;
+	left: -350px;
+}
+.top-volunteer{
+	position: relative;
+	left: -350px;
+}
+.top-sponsors{
+	position: relative;
+	left: -350px;
+}
+.top-privacy{
+	position: relative;
+	left: -350px;
+}
+.top-contact{
+	position: relative;
+	left: -350px;
+}
+.top-about{
+	position: relative;
+	left: -350px;
+}
+.heading{
+	position: relative;
+	top:-35px;
+	left: 100px;
+}
+
+  
+/*@media only screen and (min-width : 320px) and (max-width : 780px) {
+	.heading{
+		font-size: 30px;
+		margin-right: 5px;
+	}
+	.login{
+		color: #d9d9d9;
+		top: 10px;
+		font-size: 15px;
+		width: 80px;
+		
+		
+	}
+
+	.signup{
+		left: 40%;
+		font-size: 15px;
+		width: 100px;
+		
+		
+	}
+	
+	.about{
+		left: 59%;
+		font-size: 15px;
+		width: 100px;
+		
+		
+	}
+	.login-section{
+		height: 180px;
+		width: 200px;	
+		top: 0px;
+	}
+	
+}*/
