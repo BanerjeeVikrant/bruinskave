@@ -15,11 +15,10 @@ else{
 	<head>
 		<title>TheBruinConnect</title>
 		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
-		<link rel = "stylesheet" type = "text/css" href = "/v2/socialnetwork/css/style.css" />
-		<script src = "/v2/socialnetwork/js/main.js"></script>
-		<script src = "/v2/socialnetwork/js/jquery-dd.js"></script>
+		<link rel = "stylesheet" type = "text/css" href = "/bruinskave/css/style.css" />
+		<script src = "/bruinskave/js/main.js"></script>
+		<script src = "/bruinskave/js/jquery-dd.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/v2/socialnetwork/css/dd.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -44,7 +43,7 @@ else{
 		<div class = "top-heading">
 			
 				
-					<img class = "logo" width = "50px" src = "/v2/socialnetwork/img/branham.png" alt = "logo"></img>
+					<img class = "logo" width = "50px" src = "/bruinskave/img/branham.png" alt = "logo"></img>
 				
 				
 					<div class = "heading">BruinsKannect</div>
@@ -71,7 +70,7 @@ else{
 				<div class = "toplogin">
 				<?php 
 				if($username){
-					echo '<a href = "/v2/socialnetwork/php/logout.php" class = "btn-login" id = "btn-login"><span class = "glyphicon glyphicon-lock"/> <b>Logout&nbsp;</b></a>';
+					echo '<a href = "/bruinskave/php/logout.php" class = "btn-login" id = "btn-login"><span class = "glyphicon glyphicon-lock"/> <b>Logout&nbsp;</b></a>';
 				}else {
 					echo '<a class = "btn-login" id = "btn-login"><span class = "glyphicon glyphicon-lock"/> <b>Login&nbsp;</b></a>';
 				}

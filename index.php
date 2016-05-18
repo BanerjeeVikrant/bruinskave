@@ -1,6 +1,7 @@
 <?php include 'php/header.php';?>
 <?php include 'php/connect.php';?>
 <?php
+/*
 if ($_SERVER['HTTP_CLIENT_IP']!="") {
     $ip = $_SERVER['HTTP_CLIENT_IP'];
 } 
@@ -10,6 +11,7 @@ else if ($_SERVER['HTTP_X_FORWARDED_FOR']!=""){
 else {
     $ip = $_SERVER['REMOTE_ADDR'];
 }
+*/
 ?>
 <?php
 $reg = @$_POST['reg'];
@@ -87,7 +89,7 @@ if (isset($_POST["user_login"]) && isset($_POST["password_login"])) {
 		$_SESSION["user_login"] = $user_login;
 		$_SESSION["password_login"] = $password_login;
 
-		//echo 'header("Location: http://www.gogogoru.com/v2/socialnetwork/php/home.php");';
+		//echo 'header("Location: http://www.gogogoru.com/bruinskave/php/home.php");';
          	
 	} else {
 		echo 'That information is incorrect, try again';
@@ -95,10 +97,10 @@ if (isset($_POST["user_login"]) && isset($_POST["password_login"])) {
 	}
 	
 }
-if ($_SESSION["user_login"]) {
-	$updateIP = "UPDATE users SET ip='$ip' WHERE username='$user_login'";
-	$changeIP = $conn->query($updateIP);
-	echo "\n<script>window.location.assign('/v2/socialnetwork/php/home.php'); </script>\n";
+if ($username) {
+	/*$updateIP = "UPDATE users SET ip='$ip' WHERE username='$user_login'";
+	$changeIP = $conn->query($updateIP);*/
+	echo "\n<script>window.location.assign('/bruinskave/php/home.php'); </script>\n";
 }
 ?>
 <style>

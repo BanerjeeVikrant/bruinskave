@@ -218,10 +218,10 @@ if ($yourcheck->num_rows == 1) {
 			  echo "Friend Removed ...";
 			}
                     }
-                    if($selectFriendRequest->num_rows == 1){
+                    /* //if($selectFriendRequest->num_rows == 1){
                     	$msgtouser = 'You have a Pending friend Request to ' . $firstname. '. ' . 'Click to <a href = "#">Send Message</a>';
                     	$alertAbout = 'alert-info';
-                    }
+                    }*/
                             
                     ?>
     <style>
@@ -272,8 +272,9 @@ if ($yourcheck->num_rows == 1) {
         	padding: 20px;
         	position: absolute;
         	top: 380px;
-        	border: 1px solid grey;
-        	border-radius: 8px;
+        	border: 1px solid #f1f1f1;
+			box-shadow: 1px 1px 4px #A79696;
+        	
         }
         .friends{
         	width: 300px;
@@ -281,8 +282,8 @@ if ($yourcheck->num_rows == 1) {
         	padding: 5px;
         	position: absolute;
         	top: 60px;
-        	border: 1px solid grey;
-        	border-radius: 8px;
+        	border: 1px solid #f1f1f1;
+        	box-shadow: 1px 1px 4px #A79696;
         	background-color: white;
         	
         }
@@ -299,7 +300,7 @@ if ($yourcheck->num_rows == 1) {
         	top: 35px;
         }
         .msg-options-box{
-        	width: 460px;
+        	width: 269px;
         	height: 50px;
         	background-color: #cccccc;
         	position: relative;
@@ -330,24 +331,27 @@ if ($yourcheck->num_rows == 1) {
         	padding: 14px;
         	padding-left: 22px;
         	background-color: white;
+			border: 1px solid grey;
         }
         .photo-box{
         	position: relative;
         	top: -60px;
-        	left: 81px;
+        	left: 79px;
         	height: 50px;
         	width: 90px;
         	padding: 14px;
         	padding-left: 22px;
+			border: 1px solid grey;
         }
         .videos-box{
         	position: relative;
         	top: -110px;
-        	left: 172px;
+        	left: 168px;
         	height: 50px;
         	width: 90px;
         	padding: 14px;
         	padding-left: 22px;
+			border: 1px solid grey;
         }
         #post{
         	border: 1px solid black;
@@ -368,38 +372,38 @@ if ($yourcheck->num_rows == 1) {
         	left: -11px;
         }
         .option{
-		background-color: white;
-		height: 60px;
-		width: 230px;
-		padding: 10px;
-		border: 1px solid grey;
-		position: relative;
-		top: 5px;
-		left: 16px;
-		z-index:20;
+			background-color: white;
+			height: 60px;
+			width: 230px;
+			padding: 10px;
+			border: 1px solid grey;
+			position: relative;
+			top: 5px;
+			left: 16px;
+			z-index:20;
         }
         .option-sel{
-		background-color: #777777;
-		color: white;
-		height: 40px;
-		width: 210px;
-		padding: 10px;
-		border: 3px;
-		position: relative;
-		top: -1px;
-		font-weight: bold;
+			background-color: #777777;
+			color: white;
+			height: 40px;
+			width: 210px;
+			padding: 10px;
+			border: 3px;
+			position: relative;
+			top: -1px;
+			font-weight: bold;
         }
         .share-btn{
-		background-color: #99ccff;
-		color: white;
-		height: 40px;
-		width: 130px;
-		font-size: 20px;
-		font-family: verdana;
-		border: 1px solid black;
-		position: absolute;
-		top: -2px;
-		left: 368px;
+			background-color: #99ccff;
+			color: white;
+			height: 41px;
+			width: 130px;
+			font-size: 20px;
+			font-family: verdana;
+			border: 1px solid black;
+			position: absolute;
+			top: -2px;
+			left: 369px;
         }
 	#privacy-area{
 		background-color: #dddddd;
@@ -441,8 +445,9 @@ if ($yourcheck->num_rows == 1) {
 		width: 500px;
 		left: 340px;
 		padding: 20px;
-     		margin-bottom: 15px;
-     		border: 1px solid #AAAAAA;
+		margin-bottom: 15px;
+		/*border: 1px solid #AAAAAA;*/
+		box-shadow: 1px 1px 4px #A79696;
 	}
 	.posted-by-img{
 		width: 50px;
@@ -490,10 +495,11 @@ if ($yourcheck->num_rows == 1) {
 		position: relative;
 		top: -135px;
 		left: 380px;
-		border: 1px solid #AAAAAA;
+		/*border: 1px solid #AAAAAA;*/
 		padding-left: 15px;
 		font-size: 15px;
 		background-color: #f2f2f2;
+		box-shadow: 1px 1px 2px #A79696;
 	}
 	.comment-input-pic{
 		width: 40px;
@@ -501,6 +507,7 @@ if ($yourcheck->num_rows == 1) {
 		position: absolute;
 		top: -135px;
 		left: 340px;
+		box-shadow: 1px 1px 2px #A79696;
 	}	
 	.comment-body{
 		background-color: #f9f9f9;
@@ -690,7 +697,7 @@ if ($countFriends != 0) {
 		move_uploaded_file(@$_FILES["pictureUpload"]["tmp_name"],"../userdata/profile_pics/$rand_dir_name/".$_FILES["pictureUpload"]["name"]);
 		//echo "Uploaded and stored in: userdata/profile_pics/$rand_dir_name/".@$_FILES["profilepic"]["name"];
 		$profile_pic_name = @$_FILES["pictureUpload"]["name"];
-		$sql = "UPDATE users SET profile_pic='/v2/socialnetwork/userdata/profile_pics/$rand_dir_name/$profile_pic_name' WHERE username='$username'";
+		$sql = "UPDATE users SET profile_pic='/bruinskave/userdata/profile_pics/$rand_dir_name/$profile_pic_name' WHERE username='$username'";
 		
 		$profile_pic_query = $conn->query($sql);
 	   }
@@ -699,7 +706,7 @@ if ($countFriends != 0) {
 	    	move_uploaded_file(@$_FILES["pictureUpload"]["tmp_name"],"../userdata/profile_pics/$rand_dir_name/".$_FILES["pictureUpload"]["name"]);
 		//echo "Uploaded and stored in: userdata/profile_pics/$rand_dir_name/".@$_FILES["profilepic"]["name"];
 		$profile_pic_name = @$_FILES["pictureUpload"]["name"];
-		$sql = "UPDATE users SET profile_pic='/v2/socialnetwork/userdata/profile_pics/$rand_dir_name/$profile_pic_name' WHERE username='$username'";
+		$sql = "UPDATE users SET profile_pic='/bruinskave/userdata/profile_pics/$rand_dir_name/$profile_pic_name' WHERE username='$username'";
 		
 		$profile_pic_query = $conn->query($sql);
 	   }
@@ -739,7 +746,7 @@ if (((@$_FILES["pictureUpload"]["type"]=="image/jpeg") || (@$_FILES["pictureUplo
 		//echo "Uploaded and stored in: userdata/albums/$rand_dir_name/".@$_FILES["pictureUpload"]["name"];
 		$profile_pic_name = @$_FILES["pictureUpload"]["name"];
 		
-		$sql = "INSERT INTO posts VALUES ('', '$post', '$date_added', '$added_by', '$user_posted_to', '$time_added', '0', 'user', '', '', '', '/v2/socialnetwork/userdata/albums/$rand_dir_name/$profile_pic_name', '', '')";
+		$sql = "INSERT INTO posts VALUES ('', '$post', '$date_added', '$added_by', '$user_posted_to', '$time_added', '0', 'user', '', '', '', '/bruinskave/userdata/albums/$rand_dir_name/$profile_pic_name', '', '')";
 		$profile_pic_query = $conn->query($sql);
 	   }
 	   
@@ -749,7 +756,7 @@ if (((@$_FILES["pictureUpload"]["type"]=="image/jpeg") || (@$_FILES["pictureUplo
 	    	move_uploaded_file(@$_FILES["pictureUpload"]["tmp_name"],"../userdata/albums/$rand_dir_name/".$_FILES["pictureUpload"]["name"]);
 		//echo "Uploaded and stored in: userdata/albums/$rand_dir_name/".@$_FILES["pictureUpload"]["name"];
 		$profile_pic_name = @$_FILES["pictureUpload"]["name"];
-		$sql = "INSERT INTO posts VALUES ('', '$post', '$date_added', '$added_by', '$user_posted_to', '$time_added', '0', 'user', '', '', '', '/v2/socialnetwork/userdata/albums/$rand_dir_name/$profile_pic_name', '', '')";
+		$sql = "INSERT INTO posts VALUES ('', '$post', '$date_added', '$added_by', '$user_posted_to', '$time_added', '0', 'user', '', '', '', '/bruinskave/userdata/albums/$rand_dir_name/$profile_pic_name', '', '')";
 		
 		$profile_pic_query = $conn->query($sql);
 	   }
@@ -792,14 +799,14 @@ if (isset($_FILES['videoUpload'])) {
 		//echo "Uploaded and stored in: userdata/albums/$rand_dir_name/".@$_FILES["videoUpload"]["name"];
 		$profile_pic_name = @$_FILES["videoUpload"]["name"];
 		
-		$sql = "INSERT INTO posts VALUES ('', '$post', '$date_added', '$added_by', '$user_posted_to', '$time_added', '0', 'user', '', '', '', '', '/v2/socialnetwork/userdata/videos/$rand_dir_name/$profile_pic_name', '')";
+		$sql = "INSERT INTO posts VALUES ('', '$post', '$date_added', '$added_by', '$user_posted_to', '$time_added', '0', 'user', '', '', '', '', '/bruinskave/userdata/videos/$rand_dir_name/$profile_pic_name', '')";
 		$profile_pic_query = $conn->query($sql);
 	   } else {
 	  	mkdir("../userdata/videos/$rand_dir_name");
 	    	move_uploaded_file(@$_FILES["videoUpload"]["tmp_name"],"../userdata/videos/$rand_dir_name/".$_FILES["videoUpload"]["name"]);
 		//echo "Uploaded and stored in: userdata/albums/$rand_dir_name/".@$_FILES["videoUpload"]["name"];
 		$profile_pic_name = @$_FILES["videoUpload"]["name"];
-		$sql = "INSERT INTO posts VALUES ('', '$post', '$date_added', '$added_by', '$user_posted_to', '$time_added', '0', 'user', '', '', '', '', '/v2/socialnetwork/userdata/videos/$rand_dir_name/$profile_pic_name', '')";
+		$sql = "INSERT INTO posts VALUES ('', '$post', '$date_added', '$added_by', '$user_posted_to', '$time_added', '0', 'user', '', '', '', '', '/bruinskave/userdata/videos/$rand_dir_name/$profile_pic_name', '')";
 		
 		$profile_pic_query = $conn->query($sql);
 	   }
@@ -1009,7 +1016,7 @@ if(isset($_POST['videolink'])){
     			loading_currently = true;
     			offset = Number($("#post_offset").text());
     			username = <?php echo '"'.$profileUser.'"'; ?>;
-    			posturl = "/v2/socialnetwork/php/post.php?u="+username+"&o="+offset;
+    			posturl = "/bruinskave/php/post.php?u="+username+"&o="+offset;
     		
 			$.ajax({url: posturl, success: function(result){
 			        $("#reload-post-before").before(result);

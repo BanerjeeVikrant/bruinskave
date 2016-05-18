@@ -123,7 +123,7 @@ $checkme = $conn->query("SELECT * FROM users WHERE username='$username'");
 $getposts = $conn->query("SELECT * FROM posts WHERE user_posted_to='$profileUser' ORDER BY id DESC LIMIT $offset,20") or die(mysql_error());
 $tags = array();
 
-function identifyTagsInMsg($msg) {
+/* //function identifyTagsInMsg($msg) {
 	$tags = array();
 	$msg_space = split(' ',$msg);
 	for($i=0; $i < count($msg_space); $i++) {
@@ -140,7 +140,7 @@ function identifyTagsInMsg($msg) {
 				    $new_msg_dot = "<a class=\'msg-tag\' href=#>".$msg_dot[$k]."</a>";
 				    //$new_msg_dot = "<a href=\'/v2/profile.php?u=ssdf\'>tag</a> start ".$msg_dot[$k];
 				} elseif (preg_match('/^\@/',$msg_dot[$k])) {
-				    $new_msg_dot = "<a href='/v2/socialnetwork/php/profile.php?u=".substr($msg_dot[$k],1)."'>".$msg_dot[$k]."</a>";
+				    $new_msg_dot = "<a href='/bruinskave/php/profile.php?u=".substr($msg_dot[$k],1)."'>".$msg_dot[$k]."</a>";
 				} else {
 				    $new_msg_dot = $msg_dot[$k];
 				}
@@ -157,7 +157,7 @@ function identifyTagsInMsg($msg) {
 	}
 	$msg = join(' ',$msg_space);
 	return $msg;
-}
+}*/
 if($getposts->num_rows > 0) {
 	while ($row = $getposts->fetch_assoc()) {
 		$id = $row['id'];
@@ -166,7 +166,7 @@ if($getposts->num_rows > 0) {
 			continue;
 		}
 		$body = $row['body'];	
-		$body = identifyTagsInMsg($body);
+		/* //$body = identifyTagsInMsg($body);*/
 		$pic = '';
 		$vid = '';
 		
@@ -194,15 +194,15 @@ if($getposts->num_rows > 0) {
 		$userfirstname = $pic_row['first_name'];
 		$userlastname = $pic_row['last_name'];
 		$topName = '';
-		if($admin || ($username == $profileUser)){
+		if($username == $profileUser){
 			$hide = "<a href = 'deleteposts.php?p=$id' class = 'glyphicon glyphicon-remove'></a>";
 		}
 		if($added_by != $profileUser){
-			$topName = "<a href = '/v2/socialnetwork/php/profile.php?u=$added_by' class = 'posted-by-name'>$userfirstname $userlastname</a>
+			$topName = "<a href = '/bruinskave/php/profile.php?u=$added_by' class = 'posted-by-name'>$userfirstname $userlastname</a>
 			<span class = 'glyphicon glyphicon-triangle-right arrow'>
-			</span><a href = '/v2/socialnetwork/php/profile.php?u=$profileUser' class = 'posted-to-name'>$firstname $lastname</a>";
+			</span><a href = '/bruinskave/php/profile.php?u=$profileUser' class = 'posted-to-name'>$firstname $lastname</a>";
 		} else{
-			$topName = "<a href = '/v2/socialnetwork/php/profile.php?u=$added_by' class = 'samepostedby'>$firstname $lastname</a>";
+			$topName = "<a href = '/bruinskave/php/profile.php?u=$added_by' class = 'samepostedby'>$firstname $lastname</a>";
 		}
 	
 		$commentsArray = [];
@@ -251,7 +251,7 @@ if($getposts->num_rows > 0) {
 					<div class = 'comment-area'>
 						<div style = 'position: relative;'>
 						<div class = 'commentPosted'>
-							<a style='position: relative;' href = '/v2/socialnetwork/php/profile.php?u=$commentpostedby'>$commentpostedby</a>&nbsp;&nbsp;&nbsp;$commentPost
+							<a style='position: relative;' href = '/bruinskave/php/profile.php?u=$commentpostedby'>$commentpostedby</a>&nbsp;&nbsp;&nbsp;$commentPost
 							
 						</div>
 						<div style = 'position: relative;'>
@@ -311,7 +311,7 @@ $('.post-comment').submit(function(e){
 					<div class = 'comment-area'>
 						<div style = 'position: relative;'>
 						<div class = 'commentPosted'>
-							<a href = '/v2/socialnetwork/php/profile.php?u=$username '>$username </a>&nbsp;&nbsp;&nbsp;".'"'; ?>;
+							<a href = '/bruinskave/php/profile.php?u=$username '>$username </a>&nbsp;&nbsp;&nbsp;".'"'; ?>;
     var comment_html2 = <?php echo '"'."						
 						</div>
 						<div style = 'position: relative;'>
@@ -333,7 +333,7 @@ $('.post-comment').submit(function(e){
         	if(commentText == ""){
         		return;
         	}
-		var commenttxt = "<div class = 'commentPosted' style='position: relative;top: -35px;left: 60px;'><a style='position: relative;top: 0px; left: 0px;' href = '/v2/socialnetwork/php/profile.php?u=<?php echo $username; ?>'><?php echo $username; ?></a>&nbsp;&nbsp;&nbsp;" + commentText + "</div>";
+		var commenttxt = "<div class = 'commentPosted' style='position: relative;top: -35px;left: 60px;'><a style='position: relative;top: 0px; left: 0px;' href = '/bruinskave/php/profile.php?u=<?php echo $username; ?>'><?php echo $username; ?></a>&nbsp;&nbsp;&nbsp;" + commentText + "</div>";
             curr_position.parent().before(comment_html1+commenttxt+comment_html2);
             
             $(".comment-inputs").val("");
