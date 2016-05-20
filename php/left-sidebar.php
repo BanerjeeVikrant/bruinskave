@@ -93,7 +93,7 @@
                 }
                 $(function() {
                 	$('#searchSubmit').click(function() {
-                		window.location.assign("/v2/socialnetwork/php/search-result.php?users="+matchingUsers($('#s').val()));
+                		window.location.assign("/bruinskave/php/search-result.php?users="+matchingUsers($('#s').val()));
                 	});
                 });
                 $("#s").keyup(function(event){

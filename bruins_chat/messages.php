@@ -10,7 +10,8 @@
     //echo "<h1>$fromId -> $toId</h1>";
     
     $getNew = 0;
-    if( isset( $_GET['getnew'] ) ){
+    if ( isset( $_GET['getnew'] )) {
+		
     	$getNew = $_GET['getnew'];
     }
     
@@ -21,7 +22,7 @@
     $toPic = $torow['profile_pic'];
     
     $sql = "SELECT * FROM messages WHERE (((fromUser = $fromId AND toUser = $toId) OR (fromUser = $toId AND toUser = $fromId)) AND (id > $getNew)) ORDER BY id ASC";
-    //echo $sql;
+    
     $results = $conn->query($sql);
     for($i=0; $i<$results->num_rows; $i++) {
         $row = $results->fetch_assoc();

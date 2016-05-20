@@ -1,6 +1,6 @@
 <?php include 'header.php';?>
 <?php include 'connect.php';?>
-<script src="/v2/socialnetwork/js/main.js"></script>
+<script src="/bruinskave/js/main.js"></script>
 
 <?php
 if ($_SESSION['user_login']){
@@ -15,13 +15,15 @@ if ($_SESSION['user_login']){
 		$admin = false;
 	}
 }else{
-	echo "You need to <a href = '/v2/socialnetwork'>Login</a>";
+	echo "You need to <a href = '/bruinskave/'>Login</a>";
 	exit();
 }
 
 if (isset($_GET['u'])) {
 	$profileUser = $_GET['u'];
-	
+	if($profileUser == ""){
+		echo "<meta http-equiv=\"refresh\" content=\"0; url=/bruinskave/php/profile.php?u=$username\">";
+	}
  	//check user exists
 	$check = $conn->query("SELECT * FROM users WHERE username='$profileUser'");
 	if ($check->num_rows == 1) {
@@ -66,14 +68,14 @@ if (isset($_GET['u'])) {
 		$friends = $get['friend_array'];
 		$hates = $get['hates'];
 	} else {
-		echo "<meta http-equiv=\"refresh\" content=\"0; url=/v2/socialnetwork/index.php\">";
+		echo "<meta http-equiv=\"refresh\" content=\"0; url=/bruinskave/index.php\">";
 		exit();
 	}
 	
 }
 
 if($profileUser == ""){
-		echo "<meta http-equiv=\"refresh\" content=\"0; url=/v2/socialnetwork/php/profile.php?u=$username\">";
+		echo "<meta http-equiv=\"refresh\" content=\"0; url=/bruinskave/php/profile.php?u=$username\">";
 }
 if (isset($_POST['addfriend'])) {
 	$friendRequest = $_POST['addfriend'];
@@ -515,9 +517,9 @@ if ($yourcheck->num_rows == 1) {
 		position: relative;
 		top: -135px;
 		left: 340px;
-		border-bottom: 1px solid #aaaaaa;
+		border-top: 1px solid #aaaaaa;
 		border-left: 1px solid #aaaaaa;
-		border-right: 1px solid #aaaaaa;
+		box-shadow: 1px 1px 2px #A79696;
 	}
 	.comments-img{
 		width: 50px;
@@ -526,14 +528,14 @@ if ($yourcheck->num_rows == 1) {
 		position: relative;
 		top: 3px;
 		left: 10px;
-                border-radius: 45px;
+        border-radius: 45px;
 	}
 	.commentPosted{
 		padding-left: 10px;
 		font-size: 13px;
-                margin-top: -13px;
-                position: relative;
-                top: 18px;
+		margin-top: -13px;
+		position: relative;
+		top: 18px;
 	}
 	.comment-area{
 		width: 400px;
@@ -999,7 +1001,7 @@ if(isset($_POST['videolink'])){
                 </div>
                 <div id = "end">
                 <div id="loading-img" style = "position: relative;">
-                <img  src = "../img/loading.gif" width = "200px" style = "position: absolute; top: -100px; left:500px;"/>
+                <img  src = "../img/loading.gif" width = "200px" style = "position: absolute; top: -100px; left:600px;"/>
                 </div>
                 </div>
                 

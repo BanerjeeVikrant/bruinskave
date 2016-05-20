@@ -1,5 +1,11 @@
 <?php include "../php/connect.php"; ?>
 <?php include "../php/header.php"; ?>
+
+<?php
+	if (isset($_GET['s'])) {
+		$s = $_GET['s'];
+	}
+?>
 <style>
 body{
 	overflow-y: hidden;
@@ -85,7 +91,7 @@ body{
 .each-user{
     border: 1px solid #cccccc;
     padding: 5px;
-    background-color: #fdfdfd;
+    background: #F6F7F8;
 }
 .each-user:hover{
 	background-color: #f1f1f1;
@@ -111,7 +117,7 @@ body{
     border: 1px solid #f1f1f1;
     border-radius: 20px;
     font-family: verdana;
-    max-width: 50%;
+    max-width: 70%;
 }
 .their-message {
     float: left;
@@ -124,7 +130,7 @@ body{
     border: 1px solid #f1f1f1;
     border-radius: 20px;
     font-family: verdana;
-    max-width: 50%;
+    max-width: 70%;
 }
 .toPic{
 	width: 30px;
@@ -185,7 +191,7 @@ body{
 <div class = "sendTextBox">
 
 
-<input type = 'text' name = 'sendingText' class = 'sendingText' sending-to = '' rows = '1' placeholder = 'Type a Message...' id = 'sendingText' autocomplete="off" ></input>
+<input type = 'text' name = 'sendingText' class = 'sendingText' sending-to = '' placeholder = 'Type a Message...' id = 'sendingText' autocomplete="off" ></input>
 <input type = 'text' name = 'msg-id' id = 'msg-id' style = "display: none;" />
 
 </div>
@@ -198,8 +204,8 @@ $(function() {
             toId = $(this).attr('uid');
             $("#sendingText").attr("sending-to", toId);
             $("#msg-id").val(toId);
-            url = '/v2/socialnetwork/bruins_chat/messages.php?from=<?php echo $username; ?>&toid='+toId;
-            //alert(url);
+            url = '/bruinskave/bruins_chat/messages.php?from=<?php echo $username; ?>&toid='+toId+'&getnew=0';
+            
             $('#messages').load(url, function() {
 		var objDiv = document.getElementById("messages");
 		objDiv.scrollTop = objDiv.scrollHeight;
@@ -216,8 +222,8 @@ $(function() {
 	        	lastid = 0;
 			//alert('user clicked');
 			toId = $(this).attr('uid');
-			url = '/v2/socialnetwork/bruins_chat/messages.php?from=<?php echo $username; ?>&toid='+toId;
-			//alert(url);
+			url = '/bruinskave//bruins_chat/messages.php?from=<?php echo $username; ?>&toid='+toId;
+			
 			$('#messages').load(url, function() {
 				var objDiv = document.getElementById("messages");
 				objDiv.scrollTop = objDiv.scrollHeight;
@@ -231,6 +237,7 @@ $(function() {
 
 });
 var disable_msg_update = false;
+
 $("#sendingText").keyup(function(event){
     if(event.keyCode == 13){
     	disable_msg_update = true;
@@ -240,14 +247,18 @@ $("#sendingText").keyup(function(event){
 	$("#sendingText").val("");    	
     }
 });
-
+//var lastid = 0;
 function insertNewMsg(){
 	if (disable_msg_update) {
 		setTimeout(insertNewMsg,1000);
 		return;
 	}
 	lastid = $(".last_text").last().text();	
-	url = '/v2/socialnetwork/bruins_chat/messages.php?from=<?php echo $username; ?>&toid='+toId+'&getnew='+lastid;	
+	if(lastid == ""){
+		lastid = 0;
+	}
+	url = '/bruinskave/bruins_chat/messages.php?from=<?php echo $username; ?>&toid='+toId+'&getnew='+lastid;	
+
 	fromUser = "<?php echo $username; ?>";
 	$.get("messages.php",{from : fromUser, toid : toId, getnew: lastid}, function(newMsgs) {		
 		var info = newMsgs;

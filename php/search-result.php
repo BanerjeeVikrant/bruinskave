@@ -5,7 +5,7 @@
 <?php
 if (isset($_GET['users'])) {
 	$users_string = $_GET['users'];
-	$users = split(',',$users_string);
+	$users = explode(',',$users_string);
 	if (count($users) == 0) {
 		echo "<meta http-equiv=\"refresh\" content=\"0; url=/v2/socialnetwork/index.php\">";
 		exit();

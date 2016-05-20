@@ -196,7 +196,7 @@ if($username){
 		move_uploaded_file(@$_FILES["profilepic"]["tmp_name"],"../userdata/profile_pics/$rand_dir_name/".$_FILES["profilepic"]["name"]);
 		//echo "Uploaded and stored in: userdata/profile_pics/$rand_dir_name/".@$_FILES["profilepic"]["name"];
 		$profile_pic_name = @$_FILES["profilepic"]["name"];
-		$sql = "UPDATE users SET profile_pic='/v2/socialnetwork/userdata/profile_pics/$rand_dir_name/$profile_pic_name' WHERE username='$username'";
+		$sql = "UPDATE users SET profile_pic='/bruinskave/userdata/profile_pics/$rand_dir_name/$profile_pic_name' WHERE username='$username'";
 		
 		$profile_pic_query = $conn->query($sql);
 	   }
@@ -205,7 +205,7 @@ if($username){
 	    	move_uploaded_file(@$_FILES["profilepic"]["tmp_name"],"../userdata/profile_pics/$rand_dir_name/".$_FILES["profilepic"]["name"]);
 		//echo "Uploaded and stored in: userdata/profile_pics/$rand_dir_name/".@$_FILES["profilepic"]["name"];
 		$profile_pic_name = @$_FILES["profilepic"]["name"];
-		$sql = "UPDATE users SET profile_pic='/v2/socialnetwork/userdata/profile_pics/$rand_dir_name/$profile_pic_name' WHERE username='$username'";
+		$sql = "UPDATE users SET profile_pic='/bruinskave/userdata/profile_pics/$rand_dir_name/$profile_pic_name' WHERE username='$username'";
 		echo $sql;
 		$profile_pic_query = $conn->query($sql);
 	   }

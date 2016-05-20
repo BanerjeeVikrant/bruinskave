@@ -6,21 +6,23 @@ $username = $_SESSION['user_login'];
 
 ?>
 <?php
-   $offset = 0;
-   if (isset($_GET['o'])) {
-           $offset = $_GET['o'];
-   }
-   function startsWith($haystack, $needle){
-     $length = strlen($needle);
-     return (strcasecmp(substr($haystack, 0, $length),$needle) == 0);
-   }
-   if ($_GET['s']) {
-       $sql = "SELECT * FROM users WHERE 1";
-   } else {
-       $sql = "SELECT * FROM users WHERE 1 LIMIT $offset,20";
-   }
-   $result = $conn->query($sql);
-   for ($i=0; $i < $result->num_rows; $i++) {
+	$lastPost = "";
+	$s = "";
+	$offset = 0;
+	if (isset($_GET['o'])) {
+		   $offset = $_GET['o'];
+	}
+	function startsWith($haystack, $needle){
+	 $length = strlen($needle);
+	 return (strcasecmp(substr($haystack, 0, $length),$needle) == 0);
+	}
+	if ($s) {
+	   $sql = "SELECT * FROM users WHERE 1";
+	} else {
+	   $sql = "SELECT * FROM users WHERE 1 LIMIT $offset,20";
+	}
+	$result = $conn->query("SELECT * FROM users WHERE 1");
+	for ($i=0; $i < $result->num_rows; $i++) {
         $row = $result->fetch_assoc();
         if ( $row["username"] != $username ) {
                 $chat_profile_pic = $row["profile_pic"];
