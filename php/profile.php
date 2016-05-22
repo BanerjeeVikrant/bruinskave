@@ -356,7 +356,7 @@ if ($yourcheck->num_rows == 1) {
 			border: 1px solid grey;
         }
         #post{
-        	border: 1px solid black;
+        	
         	width:500px; 
         	height:100px;
         	background-color: white;
@@ -367,6 +367,7 @@ if ($yourcheck->num_rows == 1) {
         	color: black;
         	padding: 8px;
         	font-family: Verdana;
+			box-shadow: 1px 1px 4px #A79696;
         }
         #after-msg-box{
         	position: relative;
@@ -406,6 +407,7 @@ if ($yourcheck->num_rows == 1) {
 			position: absolute;
 			top: -2px;
 			left: 369px;
+			box-shadow: 1px 1px 4px #A79696;
         }
 	#privacy-area{
 		background-color: #dddddd;
@@ -430,9 +432,9 @@ if ($yourcheck->num_rows == 1) {
 	.drop-gly{
 		position: absolute;
 		top: -15px;
-        	top: 12px;
+        top: 12px;
 		left: 175px;
-        	color: white;
+        color: white;
 	}
 	.drop-helper{
 		position: absolute;
@@ -492,20 +494,22 @@ if ($yourcheck->num_rows == 1) {
 	        left: 63px;
 	}
 	.comment-inputs{
-		width: 460px;
-		height: 40px;
+		width: 450px;
+		height: 50px;
 		position: relative;
 		top: -135px;
-		left: 380px;
-		/*border: 1px solid #AAAAAA;*/
+		left: 390px;
+		border: 0;
 		padding-left: 15px;
 		font-size: 15px;
-		background-color: #f2f2f2;
+		background-color: #fcfcfc;
+		outline-width: 0;
 		box-shadow: 1px 1px 2px #A79696;
+		font-family: Verdana;
 	}
 	.comment-input-pic{
-		width: 40px;
-		height: 40px;
+		width: 50px;
+		height: 50px;
 		position: absolute;
 		top: -135px;
 		left: 340px;
@@ -517,8 +521,8 @@ if ($yourcheck->num_rows == 1) {
 		position: relative;
 		top: -135px;
 		left: 340px;
-		border-top: 1px solid #aaaaaa;
-		border-left: 1px solid #aaaaaa;
+		
+		
 		box-shadow: 1px 1px 2px #A79696;
 	}
 	.comments-img{
