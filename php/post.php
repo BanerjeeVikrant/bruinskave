@@ -1,4 +1,4 @@
-<?php include 'connect.php';?>
+;<?php include 'connect.php';?>
 <?php 
 session_start();
 if (isset($_SESSION['user_login'])) {
@@ -322,9 +322,21 @@ $('.post-comment').submit(function(e){
 				</div>
 			</div>".'"'; ?>;
 */
-     var comment_html1 = "<div style = 'position: relative;'><div class = 'comment-body'><img src = '"+ "<?php echo $yourprofilepic; ?>" + "' class = 'comments-img'></img>";
-    //var comment_html1 = "<div style = 'position: relative;'><div class = 'comment-body'>";
-    var comment_html2 = "<div style = 'position: relative;'><div class = 'comment-like' style = 'position:absolute; top: -3px;'></div></div></div></div>";
+     var comment_html1 =
+	     "<div style = 'position: relative;'>"+
+	     "	<div class = 'comment-body'>"+
+	     "    <img src = '"+ "<?php echo $yourprofilepic; ?>" + "' class = 'comments-img'></img>" +
+	     "    <div class = 'comment-area'>"+
+	     "      <div style = 'position: relative;'>";
+	    //var comment_html1 = "<div style = 'position: relative;'><div class = 'comment-body'>";
+	     var comment_html2 =
+	     "        <div style = 'position: relative;'>"+
+	     "          <div class = 'comment-like' style = 'position:absolute; top: -3px;'></div>"+
+	     "        </div>"+
+	     "      </div>"+
+	     "    </div>"+
+	     "  </div>"+
+	     "</div>";
     $.ajax({
         url:url,
         type:'post',
@@ -333,7 +345,10 @@ $('.post-comment').submit(function(e){
         	if(commentText == ""){
         		return;
         	}
-		var commenttxt = "<div class = 'commentPosted' style='position: relative;top: -35px;left: 60px;'><a style='position: relative;top: 0px; left: 0px;' href = '/bruinskave/php/profile.php?u=<?php echo $username; ?>'><?php echo $username; ?></a>&nbsp;&nbsp;&nbsp;" + commentText + "</div>";
+		var commenttxt =
+			"          <div class = 'commentPosted'>"+
+			"            <a style='position: relative;top: 0px; left: 0px;' href = '/bruinskave/php/profile.php?u=<?php echo $username; ?>'><?php echo $username; ?></a>&nbsp;&nbsp;&nbsp;" + commentText +
+			"          </div>";
             curr_position.parent().before(comment_html1+commenttxt+comment_html2);
             
             $(".comment-inputs").val("");
